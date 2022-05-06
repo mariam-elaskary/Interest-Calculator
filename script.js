@@ -1,13 +1,3 @@
-function check(){
-    var principal = document.getElementById("principal").value;
-    if (principal == '' || principal == 0 || principal < 0){
-        alert('Enter a Positive Number');
-        principal.focus();
-        return false;
-    }
-    return true;
-}
-
 function compute()
 {
     // p = document.getElementById("principal").value;
@@ -18,11 +8,13 @@ function compute()
     var interest = principal * years * rate /100;
     var year = new Date().getFullYear()+parseInt(years);
 
-    document.getElementById("result").innerHTML="If you deposit "+principal+
-    ",\<br\>at an interest rate of "+rate+
-    "%\<br\>You will receive an amount of "+
-    interest+",\<br\>in the year "+year+"\<br\>"
+    if (principal == '' || principal == 0 || principal < 0){
+        alert('Enter a Positive Number');
+        principal.focus();
+        return;
+    }
 
+    document.getElementById("result").innerHTML = "If you deposit \<span class='results'\>"+principal+"\</span\>,\<br\>at an interest rate of \<span class='results'\>"+rate+"%\</span\>\<br\>You will receive an amount of \<span class='results'\>"+interest+"\</span\>,\<br\>in the year \<span class='results'\>"+year+"\</span\>\<br\>"
 }
 
 

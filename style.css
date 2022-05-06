@@ -15,7 +15,12 @@ h1{
     width: 500px;
     padding: 20px;
     border-radius: 25px;
-    align-self: center;
+    margin-left: 30%;
+}
+
+.innerdiv{
+    width: 80%;
+    margin: auto;
 }
 
 .percent::after {
